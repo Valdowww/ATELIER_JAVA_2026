@@ -1,6 +1,13 @@
 ﻿<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-<head><title>Les conditions</title></head>
+<head>
+<style>
+body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }
+h1, h2 { color: #333; }
+input[type=text] { padding: 6px; width: 300px; }
+input[type=submit] { margin-top: 8px; padding: 8px 20px; background: #0066cc; color: white; border: none; cursor: pointer; }
+a { color: #0066cc; }
+</style><title>Les conditions</title></head>
 <body bgcolor=white>
 <h1>Exercices sur les conditions</h1>
 <form action="#" method="post">
