@@ -2,7 +2,17 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.Task" %>
 <html>
-<head><title>Liste des taches</title></head>
+<head>
+<title>Liste des taches</title>
+<style>
+body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; }
+h1 { color: #333; }
+.tache { border: 1px solid #ddd; padding: 10px; margin: 8px 0; border-radius: 4px; }
+.tache b { font-size: 1.1em; }
+.terminee { background: #f0fff0; color: #666; }
+a { color: #0066cc; margin-right: 10px; }
+</style>
+</head>
 <body>
 <h1>Liste des taches</h1>
 <%
@@ -15,17 +25,17 @@
         for (int i = 0; i < taches.size(); i++) {
             Task t = taches.get(i);
 %>
-<div>
-    <b><%= t.getTitre() %></b> - <%= t.getDescription() %> - <%= t.getDateEcheance() %>
-    <% if (t.isTerminee()) { %> [Terminee] <% } %>
-    <a href="terminer.jsp?index=<%= i %>">Marquer terminee</a>
-    <a href="supprimer.jsp?index=<%= i %>">Supprimer</a>
+<div class="tache <%= t.isTerminee() ? "terminee" : "" %>">
+<b><%= t.getTitre() %></b> - <%= t.getDescription() %> - <%= t.getDateEcheance() %>
+<% if (t.isTerminee()) { %> <span>[Terminee]</span> <% } %>
+<br><a href="terminer.jsp?index=<%= i %>">Marquer terminee</a>
+<a href="supprimer.jsp?index=<%= i %>">Supprimer</a>
 </div>
 <%
         }
     }
 %>
-<a href="ajout.jsp">Ajouter une tache</a><br>
+<br><a href="ajout.jsp">Ajouter une tache</a>
 <a href="index.jsp">Accueil</a>
 </body>
 </html>
