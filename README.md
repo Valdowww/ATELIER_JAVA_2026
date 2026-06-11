@@ -2,7 +2,7 @@
 
 ## Pourquoi l'application n'est pas deployee sur le serveur AWS
 
-Le serveur AWS fourni (ec2-15-237-202-85.eu-west-3.compute.amazonaws.com) etait inaccessible au moment du TP (timeout de connexion). Le serveur est probablement allume uniquement pendant les seances encadrees. Le deploiement sera effectue lors de la prochaine seance avec le professeur.
+Le serveur AWS fourni (ec2-15-237-202-85.eu-west-3.compute.amazonaws.com) etait inaccessible au moment du TP (timeout de connexion).
 
 ## Comment tester en local
 
