@@ -2,21 +2,12 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.Task" %>
 <html>
-<head>
-<title>Ajouter une tache</title>
-<style>
-body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; }
-h1 { color: #333; }
-label { display: block; margin: 8px 0; }
-input[type=text], input[type=date] { padding: 6px; width: 100%; box-sizing: border-box; }
-input[type=submit] { margin-top: 12px; padding: 8px 20px; background: #0066cc; color: white; border: none; cursor: pointer; }
-a { color: #0066cc; margin-right: 10px; }
-</style>
-</head>
+<head><title>Ajouter une tache</title></head>
 <body>
+<%@ include file="header.jsp" %>
 <h1>Ajouter une tache</h1>
 <form action="ajout.jsp" method="post">
-<label>Titre : <input type="text" name="titre"></label>
+<label>Titre : <input type="text" name="titre" required></label>
 <label>Description : <input type="text" name="description"></label>
 <label>Date d'echeance : <input type="date" name="dateEcheance"></label>
 <input type="submit" value="Ajouter">
@@ -35,8 +26,6 @@ a { color: #0066cc; margin-right: 10px; }
 <%
     }
 %>
-<br><a href="liste.jsp">Voir les taches</a>
-<a href="index.jsp">Accueil</a>
-<br><a href="index.html">Retour au sommaire</a>
+</div>
 </body>
 </html>

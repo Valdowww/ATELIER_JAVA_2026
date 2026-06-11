@@ -44,4 +44,17 @@ xcopy /E /I . C:\tomcat\apache-tomcat-9.0.118\webapps\orianne
 
 4. Demarrer Tomcat et ouvrir dans le navigateur
 
+
+
+## Bonus
+
+- Tri automatique des taches par date d'echeance (Collections.sort avec Comparator)
+- Date d'echeance en rouge si depassee
+- Validation du titre obligatoire
+- Message de confirmation apres ajout
+- Header de navigation commun a toutes les pages
+- Page "A propos" accessible depuis le site
+- CSS sobre et professionnel sur toutes les pages
+- Classe Task dans un package model (POO)
+
 http://localhost:8080/orianne/index.html

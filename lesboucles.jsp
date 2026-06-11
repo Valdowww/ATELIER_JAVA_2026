@@ -1,14 +1,9 @@
 ﻿<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
 <head>
-<style>
-body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }
-h1, h2 { color: #333; }
-input[type=text] { padding: 6px; width: 300px; }
-input[type=submit] { margin-top: 8px; padding: 8px 20px; background: #0066cc; color: white; border: none; cursor: pointer; }
-a { color: #0066cc; }
-</style><title>Boucles</title></head>
-<body bgcolor=white>
+<title>Boucles</title></head>
+<body>
+<%@ include file="header.jsp" %>
 <h1>Exercices sur les boucles</h1>
 <form action="#" method="post">
     <label for="inputValeur">Saisir le nombre d'etoiles : </label>
@@ -35,6 +30,7 @@ a { color: #0066cc; }
     <h2>Exercice 7 : Table de multiplication</h2>
     <% for (int i = 1; i <= cpt; i++) { %><p><%= cpt %> x <%= i %> = <%= cpt * i %></p><% } %>
 <% } %>
-<p><a href="index.html">Retour au sommaire</a></p>
+<p><a href="sommaire.jsp">Retour au sommaire</a></p>
+</div>
 </body>
 </html>
