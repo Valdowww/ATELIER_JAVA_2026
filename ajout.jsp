@@ -30,9 +30,13 @@ a { color: #0066cc; margin-right: 10px; }
         if (taches == null) { taches = new ArrayList<Task>(); }
         taches.add(new Task(titre, description, dateEcheance));
         session.setAttribute("taches", taches);
+%>
+<p style="color:green">Tache ajoutee avec succes !</p>
+<%
     }
 %>
 <br><a href="liste.jsp">Voir les taches</a>
 <a href="index.jsp">Accueil</a>
+<br><a href="index.html">Retour au sommaire</a>
 </body>
 </html>

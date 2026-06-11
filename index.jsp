@@ -12,5 +12,6 @@ a { display: block; margin: 8px 0; color: #0066cc; }
 <h1>Gestionnaire de taches</h1>
 <a href="ajout.jsp">Ajouter une tache</a>
 <a href="liste.jsp">Voir les taches</a>
+<br><a href="index.html">Retour au sommaire</a>
 </body>
 </html>
