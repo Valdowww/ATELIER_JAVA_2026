@@ -1,51 +1,59 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+﻿<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-<head>
-<title>Les tableaux</title>
-</head>
+<head><title>Les tableaux</title></head>
 <body bgcolor=white>
 <h1>Exercices sur les tableaux</h1>
 <form action="#" method="post">
-    <p>Saisir au minimu 3 chiffres à la suite, exemple : 6 78 15 <input type="text" id="inputValeur" name="chaine">
-    <p><input type="submit" value="Afficher">
+    <p>Saisir au minimum 3 chiffres separes par des espaces : <input type="text" name="chaine"></p>
+    <input type="submit" value="Afficher">
 </form>
-<%-- Récupération des valeurs --%>
-    <% String chaine = request.getParameter("chaine"); %>
-    
-    <% if (chaine != null) { %>
-
-    <%-- Division de la chaîne de chiffres séparés par des espaces --%>
-    <% String[] tableauDeChiffres = chaine.split("\\s+"); %>
-    <p>La tableau contient <%= tableauDeChiffres.length %> valeurs</br>
-    Chiffre 1 : <%= Integer.parseInt(tableauDeChiffres[0]) %></br>
-    Chiffre 2 : <%= Integer.parseInt(tableauDeChiffres[1]) %></br>
-    Chiffre 3 : <%= Integer.parseInt(tableauDeChiffres[2]) %></p>
-    
-<h2>Exercice 1 : La carré de la première valeur</h2>
-<p>Ecrire un programme afin d'afficher le carré de la première valeur</p>
-
-<h2>Exercice 2 : La somme des 2 premières valeurs</h2>
-<p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
-
-<h2>Exercice 3 : La somme de toutes les valeurs</h2>
-<p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
-Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
-
-<h2>Exercice 4 : La valeur maximum</h2>
-<p>Ecrire un programme pour afficher la valeur maximale saisie par l'utilisateur</p>
-
-<h2>Exercice 5 : La valeur minimale</h2>
-<p>Ecrire un programme pour afficher la valeur minimale saisie par l'utilisateur</p>
-
-<h2>Exercice 6 : La valeur le plus proche de 0</h2>
-<p>Trouvez la valeur la plus proche de 0 (chiffres positifs ou négatifs)</p>
-
-<h2>Exercice 7 : La valeur le plus proche de 0 (2° version)</h2>
-<p>Trouvez la valeur la plus proche de 0 (chiffres positifs ou négatifs)</p>
-<p>En cas d'égalité entre un chiffre positif et négatif, affichez le chiffre positif</p>
-
+<%
+    String chaine = request.getParameter("chaine");
+    if (chaine != null && !chaine.isEmpty()) {
+        String[] tab = chaine.split("\\s+");
+        int[] valeurs = new int[tab.length];
+        for (int i = 0; i < tab.length; i++) { valeurs[i] = Integer.parseInt(tab[i]); }
+%>
+<p>Nombre de valeurs : <%= valeurs.length %></p>
+<p>Valeur 1 : <%= valeurs[0] %>, Valeur 2 : <%= valeurs[1] %>, Valeur 3 : <%= valeurs[2] %></p>
+<h2>Exercice 1 : Carre de la premiere valeur</h2>
+<p><%= valeurs[0] %> x <%= valeurs[0] %> = <%= valeurs[0] * valeurs[0] %></p>
+<h2>Exercice 2 : Somme des 2 premieres valeurs</h2>
+<p><%= valeurs[0] %> + <%= valeurs[1] %> = <%= valeurs[0] + valeurs[1] %></p>
+<h2>Exercice 3 : Somme de toutes les valeurs</h2>
+<%
+        int somme = 0;
+        for (int v : valeurs) somme += v;
+%>
+<p>Somme : <%= somme %></p>
+<h2>Exercice 4 : Valeur maximum</h2>
+<%
+        int max = valeurs[0];
+        for (int v : valeurs) if (v > max) max = v;
+%>
+<p>Maximum : <%= max %></p>
+<h2>Exercice 5 : Valeur minimum</h2>
+<%
+        int min = valeurs[0];
+        for (int v : valeurs) if (v < min) min = v;
+%>
+<p>Minimum : <%= min %></p>
+<h2>Exercice 6 : Valeur la plus proche de 0</h2>
+<%
+        int proche = valeurs[0];
+        for (int v : valeurs) if (Math.abs(v) < Math.abs(proche)) proche = v;
+%>
+<p>Plus proche de 0 : <%= proche %></p>
+<h2>Exercice 7 : Valeur la plus proche de 0 (positif prioritaire)</h2>
+<%
+        int proche2 = valeurs[0];
+        for (int v : valeurs) {
+            if (Math.abs(v) < Math.abs(proche2)) proche2 = v;
+            else if (Math.abs(v) == Math.abs(proche2) && v > 0) proche2 = v;
+        }
+%>
+<p>Plus proche de 0 : <%= proche2 %></p>
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
 </html>
-
