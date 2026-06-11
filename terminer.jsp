@@ -1,5 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+﻿<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Task" %>
 <%
     ArrayList<Task> taches = (ArrayList<Task>) session.getAttribute("taches");
     String indexParam = request.getParameter("index");

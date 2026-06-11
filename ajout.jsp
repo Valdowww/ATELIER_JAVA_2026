@@ -1,13 +1,14 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+ï»¿<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Task" %>
 <html>
-<head><title>Ajouter une tâche</title></head>
+<head><title>Ajouter une tache</title></head>
 <body>
-<h1>Ajouter une tâche</h1>
+<h1>Ajouter une tache</h1>
 <form action="ajout.jsp" method="post">
     <label>Titre : <input type="text" name="titre"></label><br>
     <label>Description : <input type="text" name="description"></label><br>
-    <label>Date d'échéance : <input type="date" name="dateEcheance"></label><br>
+    <label>Date d'echeance : <input type="date" name="dateEcheance"></label><br>
     <input type="submit" value="Ajouter">
 </form>
 <%
@@ -23,7 +24,7 @@
         session.setAttribute("taches", taches);
     }
 %>
-<a href="liste.jsp">Voir les tâches</a><br>
+<a href="liste.jsp">Voir les taches</a><br>
 <a href="index.jsp">Accueil</a>
 </body>
 </html>

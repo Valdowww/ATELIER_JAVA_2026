@@ -48,3 +48,4 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
 </html>
+
