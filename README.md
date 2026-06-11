@@ -1,25 +1,27 @@
-﻿# ATELIER_JAVA_2026 - Orianne LOPEZ
+﻿$readme = @'
+# ATELIER_JAVA_2026 - Orianne LOPEZ
 
-## Exercices JSP/Java
+## Contenu du repo
 
-Serie d'exercices sur les boucles, conditions, chaines de caracteres et tableaux en Java/JSP.
+### Exercices JSP/Java
 
-## Gestionnaire de taches
+- **lesboucles.jsp** : 7 exercices sur les boucles (carre, triangles, losange, table de multiplication)
+- **lesconditions.jsp** : 2 exercices sur les conditions (comparaison, pair/impair)
+- **leschaines.jsp** : 6 exercices sur les chaines (verlan, voyelles/consonnes, affichage vertical...)
+- **lestableaux.jsp** : 7 exercices sur les tableaux (somme, min, max, plus proche de 0...)
 
-Mini projet de gestion de taches en Java/JSP sans base de donnees.
-
-### Fonctionnalites
+### Gestionnaire de taches (mini projet)
 
 - Ajouter une tache (titre, description, date d'echeance)
-- Afficher la liste des taches triee par date d'echeance
+- Liste des taches triee par date d'echeance
 - Date en rouge si depassee
 - Marquer une tache comme terminee
 - Supprimer une tache
-- Stockage en session (pas de base de donnees)
+- Stockage en session HTTP (pas de base de donnees)
 
 ## Pourquoi l'application n'est pas deployee sur le serveur AWS
 
-Le serveur AWS fourni (ec2-15-237-202-85.eu-west-3.compute.amazonaws.com) etait inaccessible au moment du TP (timeout de connexion). Le deploiement sera effectue lors de la prochaine seance.
+Le serveur AWS fourni (ec2-15-237-202-85.eu-west-3.compute.amazonaws.com) etait inaccessible au moment du TP (timeout de connexion).
 
 ## Comment tester en local
 
@@ -30,26 +32,16 @@ Le serveur AWS fourni (ec2-15-237-202-85.eu-west-3.compute.amazonaws.com) etait 
 
 ### Etapes
 
-1. Cloner le repo :
+1. Cloner le repo
 
-`ash
-git clone https://github.com/Valdowww/ATELIER_JAVA_2026.git
-cd ATELIER_JAVA_2026
-``n
-2. Compiler la classe Task :
+2. Compiler la classe Task
 
-`ash
 javac -d WEB-INF/classes Task.java
-``n
-3. Copier le projet dans webapps :
 
-`ash
-# Windows
-xcopy /E /I . C:\tomcat\apache-tomcat-9.0.x\webapps\orianne
-# Linux/Mac
-cp -r . /opt/tomcat/webapps/orianne
-``n
-4. Demarrer Tomcat et ouvrir :
+3. Copier le projet dans webapps (Windows)
 
-``nhttp://localhost:8080/orianne/index.html
-``n
+xcopy /E /I . C:\tomcat\apache-tomcat-9.0.118\webapps\orianne
+
+4. Demarrer Tomcat et ouvrir dans le navigateur
+
+http://localhost:8080/orianne/index.html
